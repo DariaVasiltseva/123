@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сервис "Авоська"</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 100%;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin-bottom: 8px;
+        }
+        input, select, button {
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Сервис "Авоська"</h1>
+        
+        <!-- Страница регистрации -->
+        <section id="registration">
+            <h2>Регистрация</h2>
+            <form onsubmit="handleRegistration(event)">
+                <label for="username">Логин:</label>
+                <input type="text" id="username" required>
+
+                <label for="password">Пароль:</label>
+                <input type="password" id="password" required>
+
+                <label for="fullName">ФИО:</label>
+                <input type="text" id="fullName" required>
+
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </section>
+
+        <!-- Страница авторизации -->
+        <section id="login">
+            <h2>Авторизация</h2>
+            <form onsubmit="handleLogin(event)">
+                <label for="loginUsername">Логин:</label>
+                <input type="text" id="loginUsername" required>
+
+                <label for="loginPassword">Пароль:</label>
+                <input type="password" id="loginPassword" required>
+
+                <button type="submit">Войти</button>
+            </form>
+        </section>
+
+        <!-- Страница формирования заказа -->
+        <section id="order">
+            <h2>Оформление заказа</h2>
+            <form onsubmit="handleOrder(event)">
+                <label for="product">Товар:</label>
+                <select id="product" required>
+                    <option value="">Выберите товар</option>
+                    <option value="product1">Товар 1</option>
+                    <option value="product2">Товар 2</option>
+                    <option value="product3">Товар 3</option>
+                </select>
+
+                <label for="quantity">Количество:</label>
+                <input type="number" id="quantity" min="1" required>
+
+                <label for="deliveryAddress">Адрес доставки:</label>
+                <input type="text" id="deliveryAddress" required>
+
+                <button type="submit">Заказать</button>
+            </form>
+        </section>
+    </div>
+
+    <script>
+        function handleRegistration(event) {
+            event.preventDefault();
+            alert('База данных не подключена');
+        }
+
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+            if (username === '1111' && password === '1111') {
+                alert('Успешный вход!');
+            } else {
+                alert('Неверный логин или пароль');
+            }
+        }
+function handleOrder(event) {
+            event.preventDefault();
+            alert('Заказ оформлен!');
+        }
+    </script>
+</body>
+</html>
